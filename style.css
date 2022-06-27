@@ -25,6 +25,18 @@ input {
     height: 20px;
 }
 
+input:focus:invalid {
+    box-shadow: none;
+}
+
+input:valid {
+    box-shadow: 0 0 5px 1px green;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
 input:focus {
     border: blue 3px solid;
     box-shadow: 20px;
@@ -43,6 +55,9 @@ form {
     background-color: white;
 }
 
+h2 {
+    margin-right: 10px;
+}
 
 h2, h3, input, label, button, p {
     margin-left: 20px;
