@@ -1,0 +1,106 @@
+:root {
+    font-family:'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+button {
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 3em;
+    font-size: 1.2rem;
+    padding: 15px;
+    background-color: #DD5EE9;
+    color: white;
+}
+
+input {
+    margin-right: 20px;
+    border: #e5e7eb 2px solid;
+    border-radius: 5px;
+    height: 20px;
+}
+
+input:focus {
+    border: blue 3px solid;
+    box-shadow: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 30%;
+}
+
+form {
+    background-color: white;
+}
+
+
+h2, h3, input, label, button, p {
+    margin-left: 20px;
+}
+
+
+#button-container {
+    background-color: #F5f5f5;
+}
+
+.legion-logo {
+    height: 200px;
+    width: 200px;
+}
+
+.logo-container {
+    background-color: #c5c7c9;
+    opacity: 0.4;
+}
+
+.logo-wrapper {
+    width: 70vw;
+    height: 100vh;
+    background: url("images/dmitry-spravko-tl56qAl9STg-unsplash.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.background-image {
+    width: 60%;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #F5f5f5;
+    width: 110vw;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 10px 5px 5px gray;
+    background-color: white;
+    z-index: 10;
+    position: relative;
+}
+
+.logo-container {
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container>div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 15px;
+}
