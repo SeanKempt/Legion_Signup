@@ -39,22 +39,23 @@
                     </div>
                     <div>
                         <label for="email">EMAIL</label>
-                        <input type="email" name="emailaddress" id="email" required>
+                        <input type="email" name="emailaddress" id="email" required autocomplete="email">
                     </div>
                     <div>
                         <label for="phone-number">PHONE NUMBER</label>
                         <input type="text" name="phone" id="phone-number" minlength="9"
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        <span id="phoneError" aria-live="polite"></span>
                     </div>
                     <div>
                         <label for="password">PASSWORD</label>
                         <input type="password" name="password" id="password" required minlength="8" maxlength="26"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" autocomplete="new-password">
                         <span id="passwordError" aria-live="polite"></span>
                     </div>
                     <div>
                         <label for="confirmpw">CONFIRM PASSWORD</label>
-                        <input type="password" name="confirmpw" id="confirmpw" required>
+                        <input type="password" name="confirmpw" id="confirmpw" required autocomplete="new-password">
                         <span id="confirmpwError" aria-live="polite"></span>
                     </div>
                 </div>

@@ -3,8 +3,10 @@ const password = document.getElementById("password");
 const passwordError = document.getElementById("passwordError");
 const confirmPw = document.getElementById("confirmpw");
 const confirmPWError = document.getElementById("confirmpwError");
+const phoneError = document.getElementById("phoneError");
+const phone = document.getElementById("phone-number");
 
-password.addEventListener("input", function () {
+password.addEventListener("input", function (event) {
   if (password.validity.valid) {
     passwordError.textContent = "";
     passwordError.className = "error";
@@ -13,7 +15,7 @@ password.addEventListener("input", function () {
   }
 });
 
-confirmPw.addEventListener("input", function () {
+confirmPw.addEventListener("input", function (event) {
   if (confirmPw.value === password.value) {
     confirmPWError.textContent = "";
     confirmPWError.className = "error";
@@ -24,13 +26,22 @@ confirmPw.addEventListener("input", function () {
   }
 });
 
-//Show error if password doesn't have a minimum length of 8, one uppercase and one lower letter and one number
+phone.addEventListener("input", function (event) {
+  if (phone.validity.valid && phone.value !== "") {
+    phoneError.textContent = "";
+    phoneError.className = "error";
+  } else {
+    showError();
+  }
+});
+
+//Show error function checks for valid password, phone number, password confirmation.
 
 function showError() {
   if (
-    password.value.length < 8 &&
-    !hasLowerCase(password.value) &&
-    !hasUpperCase(password.value) &&
+    password.value.length < 8 ||
+    !hasLowerCase(password.value) ||
+    !hasUpperCase(password.value) ||
     !hasNumber(password.value)
   ) {
     passwordError.textContent =
@@ -38,13 +49,15 @@ function showError() {
     passwordError.className = "error";
   }
 
-  //Show error for confirm password if it doesn't match the original input password
-
   if (confirmPw.value !== password.value) {
     confirmPWError.textContent = "* Your passwords do not match.";
     confirmPWError.className = "error";
-    //Add box shadow due to missing built in functionality for confirming password
     confirmPw.style.boxShadow = "0 0 5px 1px red";
+  }
+
+  if (!hasNumber(phone.value) || phone.value === "") {
+    phoneError.textContent = "* Please enter a valid phone number.";
+    phoneError.className = "error";
   }
 }
 
