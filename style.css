@@ -119,3 +119,12 @@ h2, h3, input, label, button, p {
     width: 40%;
     margin-bottom: 15px;
 }
+
+
+/* style of error messages */
+.error {
+    color: red;
+    font-size: 0.6rem;
+    margin-left: 20px;
+    
+}
